@@ -125,11 +125,16 @@ export async function generateSearchPage(
                                             /></div
                                         ></span>
                                         <div class="CA5RN">
-                                          <div><span class="VuuXrf">${(hostname => {
-                                            const parts = hostname.split('.');
-                                            const main = parts.length > 2 ? parts[1] : parts[0];
-                                            return main!=undefined?main.charAt(0).toUpperCase() + main.slice(1):'';
-                                          })(new URL(f.link).hostname)}</span></div>
+                                          <div><span class="VuuXrf">${(() => {
+                                            try {
+                                              const hostname = new URL(f.link.startsWith('http') ? f.link : `https://${f.link}`).hostname;
+                                              const parts = hostname.split('.');
+                                              const main = parts.length > 2 ? parts[1] : parts[0];
+                                              return main ? main.charAt(0).toUpperCase() + main.slice(1) : f.link;
+                                            } catch {
+                                              return f.link;
+                                            }
+                                          })()}</span></div>
                                           <div class="byrV5b">
                                             <cite class="qLRx3b tjvcx GvPZzd cHaqb" role="text"
 >${f.link}<span
