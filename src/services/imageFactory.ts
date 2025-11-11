@@ -5,7 +5,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 export const getImage = async (img: string): Promise<string> => {
-    switch (img) {
+    switch (img.toLowerCase()) {
         case "newspaper": {
             const thumbnailType = "newspaper"
             const thumbnailsPath = path.join(__dirname, '..', '..', 'plantillaGoogle', 'thumbnails', 'newspaper');

@@ -1,6 +1,6 @@
 export const getTemplate = (deviceType:string):string  => {
 
-    switch(deviceType) {
+    switch(deviceType.toLowerCase()) {
     case "desktop":
         return "./plantillaGoogle/resultsPagePC.html";
     case "mobile":
