@@ -4,7 +4,8 @@ export const getTemplate = (deviceType:string):string  => {
     case "desktop":
         return "./plantillaGoogle/resultsPagePC.html";
     case "mobile":
-        return "./plantillaGoogle/resultsPageMobile.html";
+        //AGREGAR PLANTILLA MOBILE
+        return "./plantillaGoogle/resultsPagePC.html";
     default:
         return "Error loading device type"
     }
